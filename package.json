@@ -1,0 +1,19 @@
+{
+  "name": "react-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces":["client"],
+  "main": "index.js",
+  "scripts": {
+    "client:dev": "npm run --workspace=client dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}
