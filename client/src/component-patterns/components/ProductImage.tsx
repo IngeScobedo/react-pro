@@ -3,9 +3,16 @@ import { productsContext } from "./ProductCard";
 import noImage from '../assets/no-image.jpg';
 import styles from '../styles/styles.module.css';
 
-const ProductImage = ({ img = '', alt = 'No product image' }) => {
+export interface Props {
+  img?: string;
+  alt?: string;
+  className?: string;
+}
+const ProductImage = ({ img, alt, className }: Props) => {
     const { product } = useContext(productsContext);
+
     let imgToShow: string;
+    !alt && (alt = product.title.toLowerCase());
   
     if (img) {
       imgToShow = img;
@@ -14,8 +21,10 @@ const ProductImage = ({ img = '', alt = 'No product image' }) => {
     } else {
       imgToShow = noImage;
     }
+
+    console.log('imgToShow', imgToShow);
   
-    return <img className={styles.productImg} src={imgToShow} alt={alt} />;
+    return <img className={`${styles.productImg} ${className ? className : ''}`} src={imgToShow} alt={alt} />;
   };
 
 export default ProductImage
