@@ -1,4 +1,5 @@
-import ProductCard, { Product } from '../components/ProductCard';
+import ProductCard from '../components/';
+import { Product } from '../interfaces/interfaces';
 
 const PRODUCTS: Product[] = [
   {
@@ -27,7 +28,11 @@ const ShoppingPage = () => {
         }}
       >
         {PRODUCTS.map((product) => (
-          <ProductCard product={product} key={product.id} />
+          <ProductCard product={product} key={product.id}>
+            <ProductCard.Image />
+            <ProductCard.Title title="hola" />
+            <ProductCard.Buttons />
+          </ProductCard>
         ))}
       </div>
     </div>
