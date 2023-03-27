@@ -1,6 +1,7 @@
-import { lazy, LazyExoticComponent } from 'react';
+import { LazyExoticComponent } from 'react';
 
 import Base from '../Base';
+import ShoppingPage from '../component-patterns/pages/ShoppingPage';
 
 // import { LazyPage1, LazyPage2, LazyPage3 } from '../lazyload/pages';
 
@@ -13,23 +14,24 @@ interface Route {
   name: string;
 }
 
+/**
+ * @description List of routes that can be used in the app, the first element in the list will be used as the default route for the application, and type "Route" will be used with lazy loading routes and no lazy load routes
+ * @property {string} to
+ * @property {string} path
+ * @property {string} Component LazyExoticComponent<JSXComponent> | JSXComponent
+ * @property {string} name Name to render
+ */
 export const routes: Route[] = [
   {
-    to: '/lazy1',
-    path: 'lazy1',
-    Component: Base,
-    name: 'Lazy-1',
+    to: '/',
+    path: '/',
+    Component: ShoppingPage,
+    name: 'Shopping',
   },
   {
-    to: '/lazy2',
-    path: 'lazy2',
+    to: '/base',
+    path: 'base',
     Component: Base,
-    name: 'Lazy-2',
-  },
-  {
-    to: '/lazy3',
-    path: 'lazy3',
-    Component: Base,
-    name: 'Lazy-3',
+    name: 'Base',
   },
 ];
